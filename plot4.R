@@ -1,3 +1,7 @@
+## load library data table
+
+library(data.table)
+
 ## read data
 data <- fread("household_power_consumption.txt", na.strings = "?")
 
@@ -12,7 +16,7 @@ data <- data[, DateTime := as.POSIXct(paste(data$Date, data$Time))]
 
 ## plot the data
 # open png device
-png(file = "plot4.png")
+png(file = "plot4.png", width=480, height=480)
 # 2 columns 2 rows of plots
 par(mfrow = c(2,2))
 # top left plot
